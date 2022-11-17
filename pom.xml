@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.233.149.33:9980/mahesh/repository/kotakbank-release/</url>
+	      <url>http://13.235.94.115:9980/mahesh/repository/kotakbank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.149.33:9980/mahesh/repository/citibank-snapshot/</url>
+	      <url>http://13.235.94.115:9980/mahesh/repository/citibank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
