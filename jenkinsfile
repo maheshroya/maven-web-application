@@ -1,0 +1,34 @@
+node{
+
+def mavenHome=tool name: 'maven3.8.5'
+
+echo "The Job name is: ${env.JOB_NAME}"
+echo "The Build number is: ${env.BUILD_NUMBER}"
+echo "The node name is: ${env.NODE_NAME}"
+
+stage('getcodefromgit'){
+git credentialsId: '0507a4b0-5ff7-4609-8611-46b8bb1967e4', url: 'https://github.com/maheshroya/maven-web-application.git'
+}
+
+stage('buildpackage'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+/*
+stage('sonarqubereport'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('sendtoartifactory'){
+sh "${mavenHome}/bin/mvn deploy"
+}
+
+stage('deploytotomcat'){
+    sshagent(['e435af5f-4743-4944-a14c-79ea0af662ff']){
+      sh "scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@172.31.32.126:/opt/apache-tomcat-9.0.68/webapps"
+}
+}
+ 
+*/ 
+
+}//node closing
